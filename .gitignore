@@ -1,0 +1,9 @@
+sft_storage/
+*.sftresume.json
+*.part
+__pycache__/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.venv/

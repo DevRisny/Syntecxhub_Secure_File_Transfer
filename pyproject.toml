@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syntecxhub-secure-file-transfer"
+version = "1.0.0"
+description = "Encrypted file upload/download with chunking, HMAC integrity, resume support and zero-knowledge server storage"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Junaideen Risny Suha" }]
+dependencies = ["cryptography>=41"]
+keywords = ["cybersecurity", "aes-gcm", "x25519", "file-transfer", "asyncio"]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+[project.scripts]
+sft-server = "syntecxhub_sft.server:main"
+sft = "syntecxhub_sft.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP006", "UP007", "UP035", "UP045"]
